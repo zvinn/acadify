@@ -1,0 +1,41 @@
+{
+  "name": "acadify",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test:frontend": "playwright test",
+    "test:unit": "node --no-warnings --test tests/unit/*.test.ts",
+    "test": "npm run test:unit && npm run test:frontend",
+    "test:frontend:update": "playwright test --update-snapshots",
+    "test:api": "node scripts/test-api-collection.mjs",
+    "test:api:mutations": "node scripts/test-api-mutation-probes.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^1.8.0",
+    "next": "16.2.10",
+    "next-intl": "^4.13.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.61.1",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.10"
+    }
+  }
+}

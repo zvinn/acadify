@@ -1,0 +1,20 @@
+"use client";
+
+import { useActionState } from "react";
+import { BellRing, Send, Trash2 } from "lucide-react";
+
+import type { ApiNotification } from "@/lib/api/notifications";
+import { manageNotification, type AdminActionState } from "../actions";
+
+const initialState: AdminActionState = {};
+
+export function AdminNotificationsManager({ notifications }: { notifications: ApiNotification[] }) {
+  const [state, action, pending] = useActionState(manageNotification, initialState);
+  return <div className="p-6 lg:p-9"><div><p className="text-xs font-black uppercase tracking-[0.2em] text-[#5CC0D6]">Communication</p><h1 className="mt-2 text-3xl font-black text-[#162535]">Notifications</h1><p className="mt-2 text-sm text-slate-500">Send system messages and inspect notification history.</p></div><form action={action} className="mt-7 grid gap-4 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 md:grid-cols-2"><label><span className="mb-2 block text-xs font-black text-slate-500">Title</span><input name="title" required className="h-12 w-full rounded-xl bg-slate-50 px-4 text-sm font-semibold outline-none ring-1 ring-slate-100" /></label><label><span className="mb-2 block text-xs font-black text-slate-500">Type</span><input name="type" defaultValue="system" className="h-12 w-full rounded-xl bg-slate-50 px-4 text-sm font-semibold outline-none ring-1 ring-slate-100" /></label><label className="md:col-span-2"><span className="mb-2 block text-xs font-black text-slate-500">Message</span><textarea name="body" required rows={4} className="w-full rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold outline-none ring-1 ring-slate-100" /></label>{state.message && <p className={`md:col-span-2 rounded-xl px-4 py-3 text-sm font-bold ${state.ok ? "bg-emerald-50 text-emerald-700" : "bg-red-50 text-red-600"}`}>{state.message}</p>}<div className="md:col-span-2 flex flex-wrap justify-end gap-3"><button name="operation" value="send-students" disabled={pending} className="inline-flex items-center gap-2 rounded-full bg-[#5CC0D6] px-6 py-3 text-sm font-black text-white"><Send size={16} /> Send to students</button><button name="operation" value="send-instructors" disabled={pending} className="inline-flex items-center gap-2 rounded-full bg-[#162535] px-6 py-3 text-sm font-black text-white"><Send size={16} /> Send to instructors</button></div></form><section className="mt-8 overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-100">{notifications.map((notification, index) => <NotificationRow key={notification._id ?? notification.id ?? index} notification={notification} />)}{notifications.length === 0 && <p className="px-6 py-14 text-center text-sm text-slate-500">No notifications returned.</p>}</section></div>;
+}
+
+function NotificationRow({ notification }: { notification: ApiNotification }) {
+  const [state, action, pending] = useActionState(manageNotification, initialState);
+  const id = notification._id ?? notification.id ?? "";
+  return <article className="border-b border-slate-100 px-6 py-5 last:border-0"><div className="flex items-start justify-between gap-4"><div className="flex min-w-0 gap-4"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-[#5CC0D6]"><BellRing size={18} /></span><div className="min-w-0"><p className="truncate text-sm font-black text-[#162535]">{notification.title ?? notification.type ?? "Notification"}</p><p className="mt-1 text-sm text-slate-500">{notification.body ?? notification.description ?? ""}</p><p className="mt-2 text-xs text-slate-400">{notification.createdAt ? new Date(notification.createdAt).toLocaleString() : "Recent"}</p></div></div>{id && <form action={action}><input type="hidden" name="operation" value="delete" /><input type="hidden" name="id" value={id} /><button disabled={pending} aria-label="Delete notification" className="flex h-9 w-9 items-center justify-center rounded-full bg-red-50 text-red-500"><Trash2 size={16} /></button></form>}</div>{state.message && <p className="mt-3 text-xs font-bold text-red-600">{state.message}</p>}</article>;
+}

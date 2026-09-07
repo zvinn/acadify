@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  /* Accessible action shade (4.6:1 with white); the logo keeps the original sky tone. */
+  --brand-primary: #066B80;
+  --brand-secondary: #162535;
+  
+  /* Text Colors */
+  --text-main: #162535;
+  --text-muted: #667085;
+  
+  /* Backgrounds */
+  --background: #FFFFFF;
+  --bg-surface: #F6F7F8;
+  
+  /* System */
+  --success: #22C55E;
+  --error: #EF4444;
+  --warning: #F59E0B;
+  
+  /* Borders */
+  --border-subtle: #E5E7EB;
+}
+
+@theme inline {
+  /* Colors */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-surface: var(--bg-surface);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+  --color-border-subtle: var(--border-subtle);
+  
+  /* Text */
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+
+  /* Fonts */
+  --font-sans: var(--font-montserrat), var(--font-cairo), ui-sans-serif, system-ui;
+  --font-heading: var(--font-montserrat), var(--font-cairo), ui-serif, Georgia;
+  
+  /* Radius */
+  --radius-btn: 12px;
+  --radius-card: 16px;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-main);
+  font-family: var(--font-montserrat), var(--font-cairo), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), var(--font-cairo), sans-serif;
+  font-weight: 700;
+}
+
+.brand-pattern {
+  background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* RTL support — automatically applied when lang="ar" is set on <html> */
+html[lang="ar"] body {
+  font-family: var(--font-cairo), var(--font-montserrat), sans-serif;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-family: var(--font-cairo), var(--font-montserrat), sans-serif;
+}
+
