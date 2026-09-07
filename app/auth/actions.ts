@@ -155,6 +155,28 @@ async function login(
     return validationError;
   }
 
+  // Demo mode: allow instant login with test credentials or direct bypass
+  if (process.env.DEMO_MODE === "true") {
+    const email = (text(formData, "email") || "").toLowerCase();
+    let resolvedRole = role;
+    if (email.includes("admin")) {
+      resolvedRole = "admin";
+    } else if (email.includes("instructor") || role === "instructor") {
+      resolvedRole = "instructor";
+    } else {
+      resolvedRole = "student";
+    }
+
+    await setSession({ token: "demo-jwt-token", role: resolvedRole });
+    const roleFallback =
+      resolvedRole === "admin"
+        ? "/admin/dashboard"
+        : resolvedRole === "instructor"
+          ? "/instructor/tasks"
+          : fallbackRedirectTo;
+    redirect(getSafeNextPath(formData, roleFallback));
+  }
+
   let token: string | null = null;
   let resolvedRole = role;
 

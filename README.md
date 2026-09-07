@@ -27,6 +27,20 @@ Featuring native **Arabic (RTL) & English (LTR)** bilingual support with **3 iso
 
 ---
 
+## 🔑 Demo Credentials & Direct Access
+
+The live demo on Vercel has **Demo Mode** enabled (`DEMO_MODE=true`), allowing clients and reviewers to test all 3 role-isolated dashboards immediately without setting up a backend database.
+
+| Role | Demo Email | Password | Direct Live URL |
+| :--- | :--- | :--- | :--- |
+| **🛡️ Administrator** | `admin@acadify.com` | `admin123` *(or any)* | [Open Admin Panel](https://acadify-platform.vercel.app/admin/dashboard) |
+| **👨‍🏫 Instructor** | `instructor@acadify.com` | `demo123` *(or any)* | [Open Instructor Workspace](https://acadify-platform.vercel.app/instructor/tasks) |
+| **🎓 Student** | `student@acadify.com` | `demo123` *(or any)* | [Open Student Portal](https://acadify-platform.vercel.app/dashboard) |
+
+> 💡 **Tip:** You can either enter the demo credentials above on the login pages or click any direct portal link above to preview the dashboards instantly.
+
+---
+
 ## 🌟 Executive Overview
 
 **Acadify** is an all-in-one educational ecosystem designed to streamline academy management, course deliveries, tutor workflows, and student learning journeys. Crafted with the latest web standards (Next.js 16 App Router, React 19 Server Components, and Tailwind CSS v4), Acadify delivers blazing-fast page loads, effortless SEO prerendering, and fluid UX transitions.
