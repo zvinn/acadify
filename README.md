@@ -14,10 +14,11 @@ Featuring native **Arabic (RTL) & English (LTR)** bilingual support with **3 iso
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Bilingual RTL/LTR](https://img.shields.io/badge/Bilingual-Arabic_RTL_%26_English-0284c7?style=for-the-badge&logo=googletranslate&logoColor=white)](https://acadify-platform.vercel.app/)
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Production_Live-00C7B7?style=for-the-badge&logo=vercel&logoColor=white)](https://acadify-platform.vercel.app/)
+[![Buy on Gumroad](https://img.shields.io/badge/Gumroad-Buy_Source_Code_%2443-FF90E8?style=for-the-badge&logo=gumroad&logoColor=black)](https://mhamedsaad8.gumroad.com/l/acadify-lms)
 
 <br />
 
-[🌐 **Explore Live Demo**](https://acadify-platform.vercel.app) • [🛡️ **Admin Panel Demo**](https://acadify-platform.vercel.app/admin/dashboard) • [👨‍🏫 **Instructor Portal**](https://acadify-platform.vercel.app/auth/instructor/login) • [🎓 **Student Portal**](https://acadify-platform.vercel.app/auth/student/login)
+[🛒 **Buy Source Code on Gumroad**](https://mhamedsaad8.gumroad.com/l/acadify-lms) • [🌐 **Explore Live Demo**](https://acadify-platform.vercel.app) • [🛡️ **Admin Panel Demo**](https://acadify-platform.vercel.app/admin/dashboard) • [👨‍🏫 **Instructor Portal**](https://acadify-platform.vercel.app/auth/instructor/login) • [🎓 **Student Portal**](https://acadify-platform.vercel.app/auth/student/login)
 
 <br />
 
@@ -38,6 +39,25 @@ The live demo on Vercel has **Demo Mode** enabled (`DEMO_MODE=true`), allowing c
 | **🎓 Student** | `student@acadify.com` | `demo123` *(or any)* | [Open Student Portal](https://acadify-platform.vercel.app/dashboard) |
 
 > 💡 **Tip:** You can either enter the demo credentials above on the login pages or click any direct portal link above to preview the dashboards instantly.
+
+---
+
+## 🛒 Purchase & Instant Download
+
+Get the complete, production-ready source code with full documentation and lifetime updates on Gumroad:
+
+<div align="center">
+
+[![Purchase on Gumroad](https://img.shields.io/badge/Gumroad-Buy_Now_%2443-FF90E8?style=for-the-badge&logo=gumroad&logoColor=black)](https://mhamedsaad8.gumroad.com/l/acadify-lms)
+
+[**👉 Click Here to Get Instant Download on Gumroad ($43)**](https://mhamedsaad8.gumroad.com/l/acadify-lms)
+
+</div>
+
+- 📦 **Instant Access:** Full sanitized Next.js 16 (App Router) + React 19 source code.
+- 📚 **Full Documentation:** Step-by-step interactive HTML setup guide.
+- 💳 **Secure Payment:** Instant checkout via Credit/Debit Cards, PayPal, or Apple Pay.
+- 🚀 **Production-Ready:** Isolated Admin, Instructor, and Student portals with native Arabic RTL & English.
 
 ---
 
